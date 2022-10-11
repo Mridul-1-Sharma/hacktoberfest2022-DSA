@@ -1,0 +1,450 @@
+
+[1]Algorithm for stack operations:
+
+->Algorithm for Push operation:−
+
+  begin procedure push: stack, data
+
+   
+   //sample code:
+   
+   if stack is full
+      return null
+   endif
+   
+   top ← top + 1
+   stack[top] ← data
+
+  end 
+
+->Algorithm for Pop operation :−
+
+  begin procedure pop: stack
+
+   //sample code:
+ 
+    if stack is empty
+       return null
+     endif
+   
+    data ← stack[top]
+    top ← top - 1
+    return data
+
+  end 
+
+
+
+
+
+
+
+
+[2]Algorithm for Linked list operations:−
+
+-> To create a singly linked list:
+
+//sample code:
+Struct Node
+{
+    int data;
+    Node* next;
+};
+
+
+-> To create a doubly linked list:
+
+//sample code:
+Struct Node
+{
+    int data;
+    Node* next;
+    Node* prev;
+};
+
+->Travarsal in Linked list:
+steps-
+1.First, initialize a Node variable, say ‘temp’ pointing to the head of the linked list.
+2.Iterate till the ‘temp’ will not become NULL.
+3.Print the node’s data.
+4.Increment ‘temp’ to temp’s next.
+
+
+   //sample code:
+
+    void traversal(Node* head) {
+    Node* temp = head;
+    while(temp != NULL)
+    {
+        cout<<(temp->data);
+        temp = temp->next;
+    }
+}
+
+
+->Insertion in Linked list:
+
+There are three ways the insertion operation is done:
+a.At the beginning of the linked list.
+b.At the end of the linked list.
+c.After after a particular node.
+
+1)Insertion at the Beginning – 
+
+ //sample code:
+
+Node* insertAtBegin(Node* head, int x)
+{
+
+    // creation of a new node of linked list.
+    Node* newNode = new Node(x)
+
+    // checking if the linked list is empty.
+    if(head == NULL)         
+    return newNode;
+
+    // insertion of the node at the beginning.
+    else     
+    {
+        newNode->next = head;
+        return newNode;
+    }
+}
+
+2)Insertion at the end – 
+
+ //sample code:
+
+Node* insertAtEnd(Node* head, int x)
+{
+
+    // If the list is empty.
+    if( head == NULL )     
+    {
+        Node* newNode = new Node(x);
+        head = newNode;
+        return head;
+    }
+    Node* temp = head;
+
+    // Traversing the list till the last node
+    while(temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    Node* newNode = new Node(x);
+    temp->next = newNode;
+    return head;
+}
+
+
+3)Insertion after a particular node –
+
+ //sample code:
+
+void insertAfterNode(Node* givenNode, int x)
+{
+    Node* newNode = new Node(x);
+   
+    newNode->next = givenNode->next;
+    givenNode->next = newNode;
+}
+
+
+ -> deletion in linked list:
+
+steps:
+1.Traversing to the previous node of the node to be deleted.
+2.Changing the next pointer of that previous node to point to the address of the next node of the node to be deleted.
+3.Freeing up the memory which is occupied by the node to be deleted.
+
+
+ //sample code:
+
+Node deleteNode(Node* head, Node* toBeDeleted)
+{
+
+    // If the node to be deleted is the head node.
+    if(head == toBeDeleted)
+    {
+        return head.next;
+    }
+
+    // temp is the traversing node.
+    Node* temp = head;
+   
+    while( temp->next != NULL )
+    {
+
+        // Searching for the previous node of the node to be deleted.
+        if(temp->next == toBeDeleted)
+        {
+            temp->next = temp->next->next;
+
+            // Freeing up the memory of the node to be deleted.
+            return head;
+        }
+        temp = temp->next;
+    }
+
+    // If no node matches in the Linked List.
+    return head;
+}
+
+
+ -> Updation in linked list:
+
+This operations in linked lists is use to replace the data part of 
+the required node with the given data.
+
+ //sample code:
+
+void updateNode(Node* head, int value, int newValue)
+{
+
+    // temp is the traversing node
+    Node* temp = head;
+    while(temp != NULL)
+    {
+
+        // If the node matches the given node to be updated.
+        if( temp->data == val)
+        {
+
+            // Updating the data part of the node with the new value.
+            temp->data = newVal;
+            return;
+        }
+        temp = temp->next;
+    }
+}
+
+
+
+
+
+
+
+
+
+[3]Algorithm for Queue operations:
+
+
+
+ -> Enqueue in Queue:
+
+Steps−
+1. Check if the queue is full.
+
+2. If the queue is full, produce overflow error and exit.
+
+3. If the queue is not full, increment rear pointer to point the next empty space.
+
+4.Add data element to the queue location, where the rear is pointing.
+
+5. return success.
+
+ //sample code:
+
+procedure enqueue(data)      
+   
+   if queue is full
+      return overflow
+   endif
+   
+   rear ← rear + 1
+   queue[rear] ← data
+   return true
+   
+end 
+
+
+ -> Dequeue in Queue:
+
+ Steps−
+
+1.Check if the queue is empty.
+
+2.If the queue is empty, produce underflow error and exit.
+
+3.If the queue is not empty, access the data where front is pointing.
+
+4.Increment front pointer to point to the next available data element.
+
+5.Return success.
+
+
+ //sample code:
+
+procedure dequeue
+   
+   if queue is empty
+      return underflow
+   end if
+
+   data = queue[front]
+   front ← front + 1
+   return true
+
+end 
+
+
+
+[4]Algorithm for Binary Search Tree (BST) operations:
+
+
+->For defining a Node in the tree-
+
+ //sample code:
+
+struct node {
+   int data;   
+   struct node *leftChild;
+   struct node *rightChild;
+};
+
+->Search operation in the tree-
+
+ //sample code:
+
+struct node* search(int data){
+   struct node *current = root;
+   printf("Visiting elements: ");
+	
+   while(current->data != data){
+	
+      if(current != NULL) {
+         printf("%d ",current->data);
+			
+         //go to left tree
+         if(current->data > data){
+            current = current->leftChild;
+         }  //else go to right tree
+         else {                
+            current = current->rightChild;
+         }
+			
+         //not found
+         if(current == NULL){
+            return NULL;
+         }
+      }			
+   }
+   
+   return current;
+}
+
+
+
+->Insert operation in the tree-
+
+
+ //sample code:
+
+void insert(int data) {
+   struct node *tempNode = (struct node*) malloc(sizeof(struct node));
+   struct node *current;
+   struct node *parent;
+
+   tempNode->data = data;
+   tempNode->leftChild = NULL;
+   tempNode->rightChild = NULL;
+
+   //if tree is empty
+   if(root == NULL) {
+      root = tempNode;
+   } else {
+      current = root;
+      parent = NULL;
+
+      while(1) {                
+         parent = current;
+			
+         //go to left of the tree
+         if(data < parent->data) {
+            current = current->leftChild;                
+            //insert to the left
+				
+            if(current == NULL) {
+               parent->leftChild = tempNode;
+               return;
+            }
+         }  //go to right of the tree
+         else {
+            current = current->rightChild;
+            
+            //insert to the right
+            if(current == NULL) {
+               parent->rightChild = tempNode;
+               return;
+            }
+         }
+      }            
+   }
+}        
+
+
+
+->Deletion operation in the tree-
+
+ //sample code:
+
+void deletion(Node*& root, int item)  
+{  
+    Node* parent = NULL;  
+    Node* cur = root;  
+  
+    search(cur, item, parent);  
+    if (cur == NULL)  
+        return;  
+  
+    if (cur->left == NULL && cur->right == NULL)  
+    {  
+        if (cur != root)  
+        {  
+            if (parent->left == cur)  
+                parent->left = NULL;  
+            else  
+                parent->right = NULL;  
+        }  
+        else  
+            root = NULL;  
+  
+        free(cur);       
+    }  
+    else if (cur->left && cur->right)  
+    {  
+        Node* succ  = findMinimum(cur- >right);  
+  
+        int val = succ->data;  
+  
+        deletion(root, succ->data);  
+  
+        cur->data = val;  
+    }  
+  
+    else  
+    {  
+        Node* child = (cur->left)? Cur- >left: cur->right;  
+  
+        if (cur != root)  
+        {  
+            if (cur == parent->left)  
+                parent->left = child;  
+            else  
+                parent->right = child;  
+        }  
+  
+        else  
+            root = child;  
+        free(cur);  
+    }  
+}  
+  
+Node* findMinimum(Node* cur)  
+{  
+    while(cur->left != NULL) {  
+        cur = cur->left;  
+    }  
+    return cur;  
+}  
