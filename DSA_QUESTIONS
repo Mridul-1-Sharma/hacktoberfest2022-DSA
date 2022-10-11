@@ -1,0 +1,53 @@
+       50  INTERVIEW DSA QUESTIONS
+
+1.	Define data structure?
+2.	What do you mean by non-linear data structure? Give example.
+3.	What do you linear data structure? Give example.
+4.	List the various operations that can be performed on data structure.
+5.	What is abstract data type? What are all not concerned in an ADT?
+6.	List out the areas in which data structures are applied extensively.
+7.	What is a linked list?
+8.	What are the pitfall encountered in singly linked list?
+9.	Define doubly linked list
+10.	Write down the steps to modify a node in linked lists.
+11.	Difference between arrays and lists
+12.	State the properties of LIST abstract data type with suitable example.
+13.	State the advantages of circular lists over doubly linked list.
+14.	What are the advantages of doubly linked list over singly linked list?
+15.	Why is the linked list used for polynomial arithmetic?
+16.	What is the advantage of linked list over arrays?
+17.	What is the circular linked list?
+18.	What is the basic purpose of header of the linked list?
+19.	What is the advantage of an ADT?
+20.	What is static linked list? State any two applications of it.
+21.	Define Stack?
+22.	 What are the various Operations performed on the Stack?
+23.	Write the postfix form for the expression -A+B-C+D?
+24.	.What are the postfix and prefix forms of the expression?
+25.	Explain the usage of stack in recursive algorithm implementation?
+26.	Define Queue.
+27.	What are the various operations performed on the Queue?
+28.	How do you test for an empty Queue?
+29.	Write down the function to insert an element into a queue, in which the queue is implemented as an array.
+30.	Define Dequeue.
+31.	.Define Circular Queue.
+32.	List any four applications of stack.
+33.	Write an algorithm for Push and Pop operations on Stack using Linked list.
+34.	Explain the linked list implementation of stack ADT in detail?
+35.	Define an efficient representation of two stacks in a given area of memory with n words and explain.
+36.	Define tree?
+37.	Define Height of tree?
+38.	Define Depth of tree?
+39.	What is the length of the path in a tree?
+40.	Define sibling?
+41.	What are the two methods of binary tree implementation?
+42.	What are the applications of binary tree?
+43.	Define expression tree?
+44.	Define tree– traversal and mention the type of traversals?
+45.	Define in -order traversal?
+46.	Write the definition of weighted graph?
+47.	Define adjacency matrix?
+48.	What is a directed graph?
+49.	Define path in a graph?\
+50.	Explain Breadth First Search algorithm with example?
+
