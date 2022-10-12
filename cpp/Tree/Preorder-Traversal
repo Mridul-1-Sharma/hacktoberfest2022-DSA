@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+struct node
+{
+    int data;
+    struct node *left;
+    struct node *right;
+}*root = NULL;
+
+void insert(int d, node *leaf)
+{
+    if(d< leaf->data)
+    {
+        if(leaf->left!=NULL)
+        {
+            insert(d, leaf->left);
+        }
+        else
+        {
+            leaf->left=new node;
+            leaf->left->data=d;
+            leaf->left->left=NULL;
+            leaf->left->right=NULL;
+        }
+    }
+    else if(d>=leaf->data)
+    {
+        if(leaf->right!=NULL)
+        {
+        insert(d, leaf->right);
+        }
+        else
+        {
+        leaf->right=new node;
+        leaf->right->data=d;
+        leaf->right->left=NULL;
+        leaf->right->right=NULL;
+        }
+        
+    }
+}
+void createnode(int inf)
+{
+    if(root!=NULL)
+        insert(inf, root);
+    else
+    {
+        root=new node;
+        root->data=inf;
+        root->left=NULL;
+        root->right=NULL;
+    }    
+}
+
+void preorder(struct node *temp)
+{
+    if(temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        preorder(temp->left);
+        preorder(temp->right);
+    }
+}
+
+int main()
+{
+    createnode(6);
+    createnode(5);
+    createnode(7);
+    createnode(3);
+    createnode(1);
+    createnode(8);    
+    cout<<"PreOrder Traversal: ";
+    preorder(root);
+    cout<<endl;
+    return 0;   
+}
